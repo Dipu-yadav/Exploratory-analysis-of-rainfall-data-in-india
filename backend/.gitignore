@@ -1,0 +1,6 @@
+echo "backend/venv/" >> .gitignore
+echo "backend/models/" >> .gitignore
+echo "backend/data/" >> .gitignore
+echo "__pycache__/" >> .gitignore
+echo "*.pyc" >> .gitignore
+echo "*.pkl" >> .gitignore
