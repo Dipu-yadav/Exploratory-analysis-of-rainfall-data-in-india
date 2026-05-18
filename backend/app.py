@@ -44,7 +44,7 @@ def load_rainfall_data():
     if rainfall_data is None:
         # Generate sample data with historical rainfall (2010-2024) for all Indian states
         np.random.seed(42)
-        dates = pd.date_range(start='2010-01-01', end='2024-12-31', freq='D')
+        dates = pd.date_range(start='2020-01-01', end='2023-12-31', freq='ME')
         states = ALL_INDIA_STATES
         
         data = []
@@ -113,7 +113,7 @@ def train_model():
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)
     
-    rainfall_model = RandomForestRegressor(n_estimators=100, random_state=42, n_jobs=-1)
+    rainfall_model = RandomForestRegressor(n_estimators=10, random_state=42, n_jobs=1)
     rainfall_model.fit(X_train_scaled, y_train)
     
     # Save model
