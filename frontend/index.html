@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainfall Analysis - India Agriculture</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌧️ Rainfall Analysis for Indian Agriculture</h1>
+            <p class="subtitle">Exploratory Data Analysis & Predictive Insights</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="overview">Overview</button>
+            <button class="tab-btn" data-tab="state-analysis">State Analysis</button>
+            <button class="tab-btn" data-tab="predictions">Predictions</button>
+            <button class="tab-btn" data-tab="trends">Trends</button>
+        </nav>
+
+        <!-- Overview Tab -->
+        <div id="overview" class="tab-content active">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Records</h3>
+                    <p class="stat-value" id="total-records">-</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Average Rainfall</h3>
+                    <p class="stat-value" id="avg-rainfall">-</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Max Rainfall</h3>
+                    <p class="stat-value" id="max-rainfall">-</p>
+                </div>
+                <div class="stat-card">
+                    <h3>States Covered</h3>
+                    <p class="stat-value" id="states-count">-</p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h2>Monthly Rainfall Distribution</h2>
+                <canvas id="monthlyChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <h2>Yearly Rainfall Trends</h2>
+                <canvas id="yearlyChart"></canvas>
+            </div>
+        </div>
+
+        <!-- State Analysis Tab -->
+        <div id="state-analysis" class="tab-content">
+            <div class="control-group">
+                <label for="state-select">Select State:</label>
+                <select id="state-select">
+                    <option value="">Select State</option>
+                </select>
+            </div>
+
+            <div class="chart-container">
+                <h2 id="state-chart-title">Monthly Rainfall by State</h2>
+                <canvas id="stateChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <h2>Historical Yearly Rainfall</h2>
+                <canvas id="historicalChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <h2>Seasonal Analysis</h2>
+                <canvas id="seasonalChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Predictions Tab -->
+        <div id="predictions" class="tab-content">
+            <div class="prediction-form">
+                <h2>Rainfall Prediction</h2>
+                <div class="form-group">
+                    <label for="predict-state">State:</label>
+                    <select id="predict-state">
+                        <option value="">Select State</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="predict-date">Date:</label>
+                    <input type="date" id="predict-date" required>
+                </div>
+                <button id="predict-btn" class="btn-primary">Predict Rainfall</button>
+            </div>
+
+            <div id="prediction-result" class="prediction-result"></div>
+        </div>
+
+        <!-- Trends Tab -->
+        <div id="trends" class="tab-content">
+            <div class="chart-container">
+                <h2>Rainfall Trends by State</h2>
+                <canvas id="trendsChart"></canvas>
+            </div>
+
+            <div id="trends-table" class="table-container"></div>
+        </div>
+
+        <footer>
+            <p>AI & Machine Learning Project - Rainfall Analysis for Agriculture</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
